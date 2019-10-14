@@ -1,0 +1,2 @@
+/usr/bin/ar qc libda.a  CMakeFiles/da.dir/dynamicarray.c.o
+/usr/bin/ranlib libda.a

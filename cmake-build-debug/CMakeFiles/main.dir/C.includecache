@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/dynamicarray.h
+
+/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/functions.h
+dynamicarray.h
+/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/dynamicarray.h
+
+/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/main.c
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+pthread.h
+-
+semaphore.h
+-
+functions.h
+/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/functions.h
+dynamicarray.h
+/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/dynamicarray.h
+
