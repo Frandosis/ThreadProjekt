@@ -17,13 +17,13 @@ void towerOfHanoi (Array* a, int n, char from_rod, char to_rod, char aux_rod){
     if (n == 1){
 
         str = (char *) malloc(a->strsize*sizeof(&c));
-        sprintf(str, "Move disk 1 from rod %c to rod %c\n", from_rod, to_rod);
+        sprintf(str, "Move disk %d from rod %c to rod %c", n, from_rod, to_rod);
         addString(a, str);
         return;
     }
     towerOfHanoi(a ,n-1, from_rod, aux_rod, to_rod);
     str = (char *) malloc(a->strsize*sizeof(&c));
-    sprintf( str,"Move disk %d from rod %c to rod %c\n", n, from_rod, to_rod);
+    sprintf( str,"Move disk %d from rod %c to rod %c", n, from_rod, to_rod);
     addString(a, str);
     towerOfHanoi(a, n-1, aux_rod, to_rod, from_rod);
 }
@@ -39,7 +39,7 @@ int fibonacci(Array *a,int prNo, int num, int max)
     } else {
        nxtNo = prNo + num;
        str = (char *) malloc(a->strsize*sizeof(&c));
-       sprintf(str,"%d\n", num);
+       sprintf(str,"%d", num);
        addString(a, str);
        return fibonacci(a, num, nxtNo, max) + 1;
     }

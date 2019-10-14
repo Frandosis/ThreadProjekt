@@ -13,6 +13,7 @@ typedef struct {
 
 void initArray(Array *a, size_t initialSize, size_t stringsize);
 void addString(Array *a, char *element);
+int contains(Array* a, char * element);
 void freeArray(Array *a);
 
 #endif //THREADPROJEKT_DYNAMICARRAY_H

@@ -2,6 +2,7 @@
 // Created by s184805 on 14-10-2019.
 //
 #include <stdlib.h>
+#include <string.h>
 #include "dynamicarray.h"
 
 
@@ -22,7 +23,15 @@ void addString(Array *a, char *element) {
     }
     a->array[a->used++] = element;
 }
-
+int contains(Array* a, char * element)
+{
+    for (size_t i = 0; i < a->used; i++){
+         if(strcmp(element, a->array[i]) == 0){
+            return 1;
+         }
+     }
+     return 0;
+}
 void freeArray(Array *a) {
     //first free every string in the array.
     for (size_t i = 0; i < a->size; i++){
