@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/main.dir/main.c.o  -o main libfunc.a libda.a -lm libsaq.a 
+/usr/bin/cc -g   CMakeFiles/main.dir/main.c.o  -o main libfunc.a -lm libda.a libsaq.a -pthread 

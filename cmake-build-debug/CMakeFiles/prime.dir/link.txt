@@ -1,2 +1,0 @@
-/usr/bin/ar qc libprime.a  CMakeFiles/prime.dir/functions.c.o
-/usr/bin/ranlib libprime.a
