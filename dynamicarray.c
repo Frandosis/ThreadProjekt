@@ -44,4 +44,3 @@ void freeArray(Array *a) {
     a->used = a->size = 0;
 }
 
-

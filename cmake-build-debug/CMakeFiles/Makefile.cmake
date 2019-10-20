@@ -46,5 +46,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/da.dir/DependInfo.cmake"
   "CMakeFiles/main.dir/DependInfo.cmake"
-  "CMakeFiles/prime.dir/DependInfo.cmake"
+  "CMakeFiles/saq.dir/DependInfo.cmake"
+  "CMakeFiles/func.dir/DependInfo.cmake"
   )

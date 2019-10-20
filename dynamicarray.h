@@ -11,6 +11,7 @@ typedef struct {
     size_t strsize;
 } Array;
 
+
 void initArray(Array *a, size_t initialSize, size_t stringsize);
 void addString(Array *a, char *element);
 int contains(Array* a, char * element);

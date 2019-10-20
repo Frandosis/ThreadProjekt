@@ -48,24 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt
+CMAKE_SOURCE_DIR = "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug
+CMAKE_BINARY_DIR = "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -78,11 +67,22 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles" "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -137,17 +137,30 @@ main/fast:
 .PHONY : main/fast
 
 #=============================================================================
-# Target rules for targets named prime
+# Target rules for targets named saq
 
 # Build rule for target.
-prime: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 prime
-.PHONY : prime
+saq: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 saq
+.PHONY : saq
 
 # fast build rule for target.
-prime/fast:
-	$(MAKE) -f CMakeFiles/prime.dir/build.make CMakeFiles/prime.dir/build
-.PHONY : prime/fast
+saq/fast:
+	$(MAKE) -f CMakeFiles/saq.dir/build.make CMakeFiles/saq.dir/build
+.PHONY : saq/fast
+
+#=============================================================================
+# Target rules for targets named func
+
+# Build rule for target.
+func: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 func
+.PHONY : func
+
+# fast build rule for target.
+func/fast:
+	$(MAKE) -f CMakeFiles/func.dir/build.make CMakeFiles/func.dir/build
+.PHONY : func/fast
 
 dynamicarray.o: dynamicarray.c.o
 
@@ -182,7 +195,7 @@ functions.o: functions.c.o
 
 # target to build an object file
 functions.c.o:
-	$(MAKE) -f CMakeFiles/prime.dir/build.make CMakeFiles/prime.dir/functions.c.o
+	$(MAKE) -f CMakeFiles/func.dir/build.make CMakeFiles/func.dir/functions.c.o
 .PHONY : functions.c.o
 
 functions.i: functions.c.i
@@ -191,7 +204,7 @@ functions.i: functions.c.i
 
 # target to preprocess a source file
 functions.c.i:
-	$(MAKE) -f CMakeFiles/prime.dir/build.make CMakeFiles/prime.dir/functions.c.i
+	$(MAKE) -f CMakeFiles/func.dir/build.make CMakeFiles/func.dir/functions.c.i
 .PHONY : functions.c.i
 
 functions.s: functions.c.s
@@ -200,7 +213,7 @@ functions.s: functions.c.s
 
 # target to generate assembly for a file
 functions.c.s:
-	$(MAKE) -f CMakeFiles/prime.dir/build.make CMakeFiles/prime.dir/functions.c.s
+	$(MAKE) -f CMakeFiles/func.dir/build.make CMakeFiles/func.dir/functions.c.s
 .PHONY : functions.c.s
 
 main.o: main.c.o
@@ -230,17 +243,45 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.c.s
 .PHONY : main.c.s
 
+stackandqueue.o: stackandqueue.c.o
+
+.PHONY : stackandqueue.o
+
+# target to build an object file
+stackandqueue.c.o:
+	$(MAKE) -f CMakeFiles/saq.dir/build.make CMakeFiles/saq.dir/stackandqueue.c.o
+.PHONY : stackandqueue.c.o
+
+stackandqueue.i: stackandqueue.c.i
+
+.PHONY : stackandqueue.i
+
+# target to preprocess a source file
+stackandqueue.c.i:
+	$(MAKE) -f CMakeFiles/saq.dir/build.make CMakeFiles/saq.dir/stackandqueue.c.i
+.PHONY : stackandqueue.c.i
+
+stackandqueue.s: stackandqueue.c.s
+
+.PHONY : stackandqueue.s
+
+# target to generate assembly for a file
+stackandqueue.c.s:
+	$(MAKE) -f CMakeFiles/saq.dir/build.make CMakeFiles/saq.dir/stackandqueue.c.s
+.PHONY : stackandqueue.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... da"
 	@echo "... main"
-	@echo "... prime"
+	@echo "... rebuild_cache"
+	@echo "... saq"
+	@echo "... func"
 	@echo "... dynamicarray.o"
 	@echo "... dynamicarray.i"
 	@echo "... dynamicarray.s"
@@ -250,6 +291,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... stackandqueue.o"
+	@echo "... stackandqueue.i"
+	@echo "... stackandqueue.s"
 .PHONY : help
 
 

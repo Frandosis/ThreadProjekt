@@ -8,38 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug"/>
+				<Option working_dir="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug"/>
+				<Option working_dir="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="da">
-				<Option output="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/libda.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug"/>
+				<Option output="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/libda.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -51,15 +41,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 da"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 da"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="da/fast">
-				<Option output="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/libda.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug"/>
+				<Option output="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/libda.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -71,15 +61,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 da/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 da/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="main">
-				<Option output="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug"/>
+				<Option output="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -91,15 +81,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 main"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 main"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="main/fast">
-				<Option output="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug"/>
+				<Option output="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -111,15 +101,25 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 main/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 main/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="prime">
-				<Option output="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/libprime.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug"/>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="saq">
+				<Option output="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/libsaq.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -131,15 +131,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 prime"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 saq"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="prime/fast">
-				<Option output="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/libprime.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug"/>
+			<Target title="saq/fast">
+				<Option output="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/libsaq.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -151,29 +151,75 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 prime/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 saq/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="func">
+				<Option output="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/libfunc.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 func"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="func/fast">
+				<Option output="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/libfunc.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 func/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nikolaj\ Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/dynamicarray.c">
+		<Unit filename="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/dynamicarray.c">
 			<Option target="da"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/dynamicarray.h">
+		<Unit filename="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/dynamicarray.h">
 			<Option target="da"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/functions.c">
-			<Option target="prime"/>
+		<Unit filename="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/functions.c">
+			<Option target="func"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/functions.h">
+		<Unit filename="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/functions.h">
+			<Option target="func"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/main.c">
 			<Option target="main"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/main.c">
-			<Option target="main"/>
+		<Unit filename="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/stackandqueue.c">
+			<Option target="saq"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/CMakeLists.txt">
+		<Unit filename="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/stackandqueue.h">
+			<Option target="saq"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

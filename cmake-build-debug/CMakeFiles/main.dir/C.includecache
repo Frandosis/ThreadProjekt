@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/dynamicarray.h
+/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/dynamicarray.h
 
-/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/functions.h
+/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/functions.h
 dynamicarray.h
-/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/dynamicarray.h
+/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/dynamicarray.h
 
-/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/main.c
+/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/main.c
 stdio.h
 -
 stdlib.h
@@ -24,7 +24,7 @@ pthread.h
 semaphore.h
 -
 functions.h
-/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/functions.h
+/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/functions.h
 dynamicarray.h
-/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/dynamicarray.h
+/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/dynamicarray.h
 

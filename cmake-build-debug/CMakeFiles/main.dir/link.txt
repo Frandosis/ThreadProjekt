@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/main.dir/main.c.o  -o main libprime.a libda.a -lm 
+/usr/bin/cc -g   CMakeFiles/main.dir/main.c.o  -o main libfunc.a libda.a -lm libsaq.a 

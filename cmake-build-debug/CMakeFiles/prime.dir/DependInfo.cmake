@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/functions.c" "/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles/prime.dir/functions.c.o"
+  "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/functions.c" "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles/prime.dir/functions.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -14,7 +14,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles/da.dir/DependInfo.cmake"
+  "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles/da.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

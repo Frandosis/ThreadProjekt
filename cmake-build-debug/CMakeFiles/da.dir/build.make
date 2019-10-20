@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt
+CMAKE_SOURCE_DIR = "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug
+CMAKE_BINARY_DIR = "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/da.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/da.dir/flags.make
 
 CMakeFiles/da.dir/dynamicarray.c.o: CMakeFiles/da.dir/flags.make
 CMakeFiles/da.dir/dynamicarray.c.o: ../dynamicarray.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/da.dir/dynamicarray.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/da.dir/dynamicarray.c.o   -c /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/dynamicarray.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/da.dir/dynamicarray.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/da.dir/dynamicarray.c.o   -c "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/dynamicarray.c"
 
 CMakeFiles/da.dir/dynamicarray.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/da.dir/dynamicarray.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/dynamicarray.c > CMakeFiles/da.dir/dynamicarray.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/dynamicarray.c" > CMakeFiles/da.dir/dynamicarray.c.i
 
 CMakeFiles/da.dir/dynamicarray.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/da.dir/dynamicarray.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/dynamicarray.c -o CMakeFiles/da.dir/dynamicarray.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/dynamicarray.c" -o CMakeFiles/da.dir/dynamicarray.c.s
 
 # Object files for target da
 da_OBJECTS = \
@@ -80,7 +80,7 @@ da_EXTERNAL_OBJECTS =
 libda.a: CMakeFiles/da.dir/dynamicarray.c.o
 libda.a: CMakeFiles/da.dir/build.make
 libda.a: CMakeFiles/da.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libda.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libda.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/da.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/da.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/da.dir/clean:
 .PHONY : CMakeFiles/da.dir/clean
 
 CMakeFiles/da.dir/depend:
-	cd /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles/da.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt" "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt" "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug" "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug" "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles/da.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/da.dir/depend
 
