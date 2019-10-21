@@ -349,6 +349,8 @@ int main() {
 
     printf("\nTime it took for all threads to join: %lf\n", main_time);
     printf("\nTime it would have taken without multithreading: %lf\n", seq_total);
+
+    printf("\nPercentage difference between the two: %lf\n", 100-((main_time/seq_total)*100));
     
     sem_destroy(&filelock);
     sem_destroy(&tohlock);
