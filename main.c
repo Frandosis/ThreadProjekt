@@ -340,7 +340,7 @@ int main() {
             time_spent[i] = (double) (data[i].end - data[i].start) / CLOCKS_PER_SEC;
         }
         seq_total += time_spent[i];
-        printf("Thread %d process time was %lf\n", i, time_spent[i]);
+        printf("Thread %ld process time was %lf\n", data[i].taskid, time_spent[i]);
     }
     /*
      * For fair comparison between the total time without multithreading,
