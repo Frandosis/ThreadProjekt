@@ -5,7 +5,7 @@
 #include <semaphore.h>
 #include "functions.h"
 #include "dynamicarray.h"
-#include <math.h>
+#include <string.h>
 
 #define TOH_DISK 10
 
@@ -13,11 +13,11 @@ FILE * fptr;
 sem_t filelock;
 int primelock;
 int fibonaccilock;
-int tohlock;
+sem_t tohlock;
 
 
 void * primeWr(void * t){
-    printf("Starting thread %ld", (long) t);
+    printf("Starting thread %ld\n", (long) t);
     long retval = 0;
     char * str;
     Array numbers;
@@ -31,10 +31,10 @@ void * primeWr(void * t){
             addString(&numbers, str);
         }
     }
-
+    /*
     while(fibonaccilock == 1 || tohlock == 1){
 
-    }
+    }*/
     sem_wait(&filelock);
 
     if((fptr = fopen("file.txt", "w")) == NULL) {
@@ -58,7 +58,7 @@ void * primeWr(void * t){
 }
 
 void * primeRd(void * t){
-    printf("Starting thread %ld", (long) t);
+    printf("Starting thread %ld\n", (long) t);
     time_t t1;
     long retval = 0;
     Array numbers;
@@ -112,7 +112,7 @@ void * primeRd(void * t){
 }
 
 void * fibonacciWr(void * t){
-    printf("Starting thread %ld", (long) t);
+    printf("Starting thread %ld\n", (long) t);
     long retval = 0;
     long n = RAND_MAX;
 
@@ -121,9 +121,9 @@ void * fibonacciWr(void * t){
 
     fibonacci(&numbers, 0, 1, n);
 
-    while(primelock == 1 || tohlock == 1){
+    /*while(primelock == 1 || tohlock == 1){
 
-    }
+    }*/
     sem_wait(&filelock);
 
     if((fptr = fopen("file.txt", "w")) == NULL) {
@@ -145,7 +145,7 @@ void * fibonacciWr(void * t){
 }
 
 void * fibonacciRd(void * t){
-    printf("Starting thread %ld", (long) t);
+    printf("Starting thread %ld\n", (long) t);
     long retval = 0;
     time_t time1;
     Array numbers;
@@ -157,7 +157,7 @@ void * fibonacciRd(void * t){
     }
     sem_wait(&filelock);
 
-    if((fptr = fopen("file.txt", "r")) == NULL) {
+    if((fptr = fopen("/file.txt", "r")) == NULL) {
         puts("File couldn't be opened");
         retval = 0;
         pthread_exit((void*) retval);
@@ -200,12 +200,19 @@ void * fibonacciRd(void * t){
 }
 
 void * towerOfHanoiWr(void * t){
-    printf("Starting thread %ld", (long) t);
+    sem_wait(&tohlock);
+    printf("Starting thread %ld\n", (long) t);
+    size_t strsize = 100;
     Array ins;
     long retval = 0;
     int n = TOH_DISK;
+    char * filename = (char *) calloc(strsize, sizeof(char));
 
-    initArray(&ins, 2, 100);
+    filename = getcwd(filename, strsize);
+    strcat(filename, "\\file.txt");
+
+    initArray(&ins, 2, strsize);
+
     towerOfHanoi(&ins, n, 'A', 'C', 'B');
 
     while(primelock == 1 || fibonaccilock == 1){
@@ -213,40 +220,39 @@ void * towerOfHanoiWr(void * t){
     }
     sem_wait(&filelock);
 
-    if((fptr = fopen("file.txt", "w")) == NULL) {
+    if((fptr = fopen(filename, "w")) == NULL) {
         puts("File couldn't be opened");
         retval = 0;
         pthread_exit((void*)retval);
     }
-
+    puts("Writing to the file\n");
     for (size_t i = 0; i < ins.used; i++){
         fprintf(fptr, "%s\n", ins.array[i]);
     }
 
-    tohlock = 1;
+    sem_post(&tohlock);
     fclose (fptr);
     sem_post(&filelock);
 
     freeArray(&ins);
+    free(filename);
 
     retval = 1;
     pthread_exit((void *) retval);
 }
 
 void * towerOfHanoiRd(void * t){
-    printf("Starting thread %ld", (long) t);
+    printf("Starting thread %ld\n", (long) t);
     long retval = 0;
     int n = TOH_DISK;
     char * str;
     Array ins;
     initArray(&ins, 2, 100);
 
-    while (tohlock != 1){
-
-    }
+    sem_wait(&tohlock);
     sem_wait(&filelock);
 
-    if((fptr = fopen("file.txt", "r")) == NULL) {
+    if((fptr = fopen(".\\file.txt", "r")) == NULL) {
         puts("File couldn't be opened");
         retval = 0;
         pthread_exit((void*) retval);
@@ -255,24 +261,22 @@ void * towerOfHanoiRd(void * t){
 
     while (!feof(fptr)){
         str = (char *) calloc(ins.strsize, sizeof(char));
-        fscanf(fptr,"%s",str);
+        fgets(str, ins.strsize, fptr);
         addString(&ins, str);
     }
 
     fclose(fptr);
-    fibonaccilock = 0;
 
+    sem_post(&tohlock);
     sem_post(&filelock);
-
     retval = tOHPlayer(&ins, n);
     freeArray(&ins);
-
     pthread_exit((void *) retval);
 }
 
 int main() {
-    int num_t = 6;
-    void * (*fun_ptr_arr[])(void *) = {primeWr, primeRd, fibonacciWr, fibonacciRd, towerOfHanoiWr, towerOfHanoiRd};
+    int num_t = 2;
+    void * (*fun_ptr_arr[])(void *) = {towerOfHanoiWr, towerOfHanoiRd};
     void * retval [num_t];
 
     pthread_attr_t attr;
@@ -280,7 +284,8 @@ int main() {
     long taskids [num_t];
     int rc, t;
 
-    sem_init(&filelock, 0, 1);
+    sem_init(&filelock, NULL, 1);
+    sem_init(&tohlock, NULL, 1);
 
     //Create the joinable attributes for the threads.
     pthread_attr_init(&attr);
@@ -305,8 +310,10 @@ int main() {
             printf("ERROR; return code from pthread_join() is %d\n", rc);
             exit(-1);
         }
-        printf("Value returned from thread %d: %ld", t, (long) retval[t]);
+        printf("Value returned from thread %d: %ld\n", t, (long) retval[t]);
     }
+
+    sem_destroy(&filelock);
 
     pthread_exit(NULL);
 
