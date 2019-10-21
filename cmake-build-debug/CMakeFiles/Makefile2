@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt"
+CMAKE_SOURCE_DIR = /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug"
+CMAKE_BINARY_DIR = /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -77,7 +77,7 @@ clean: CMakeFiles/func.dir/clean
 CMakeFiles/da.dir/all:
 	$(MAKE) -f CMakeFiles/da.dir/build.make CMakeFiles/da.dir/depend
 	$(MAKE) -f CMakeFiles/da.dir/build.make CMakeFiles/da.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles" --progress-num=1,2 "Built target da"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target da"
 .PHONY : CMakeFiles/da.dir/all
 
 # Include target in all.
@@ -87,9 +87,9 @@ all: CMakeFiles/da.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/da.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles" 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/da.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/da.dir/rule
 
 # Convenience name for target.
@@ -111,7 +111,7 @@ CMakeFiles/main.dir/all: CMakeFiles/func.dir/all
 CMakeFiles/main.dir/all: CMakeFiles/da.dir/all
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles" --progress-num=5,6 "Built target main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target main"
 .PHONY : CMakeFiles/main.dir/all
 
 # Include target in all.
@@ -121,9 +121,9 @@ all: CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles" 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/main.dir/rule
 
 # Convenience name for target.
@@ -143,7 +143,7 @@ CMakeFiles/main.dir/clean:
 CMakeFiles/saq.dir/all:
 	$(MAKE) -f CMakeFiles/saq.dir/build.make CMakeFiles/saq.dir/depend
 	$(MAKE) -f CMakeFiles/saq.dir/build.make CMakeFiles/saq.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles" --progress-num=7,8 "Built target saq"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target saq"
 .PHONY : CMakeFiles/saq.dir/all
 
 # Include target in all.
@@ -153,9 +153,9 @@ all: CMakeFiles/saq.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/saq.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles" 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/saq.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/saq.dir/rule
 
 # Convenience name for target.
@@ -176,7 +176,7 @@ CMakeFiles/func.dir/all: CMakeFiles/saq.dir/all
 CMakeFiles/func.dir/all: CMakeFiles/da.dir/all
 	$(MAKE) -f CMakeFiles/func.dir/build.make CMakeFiles/func.dir/depend
 	$(MAKE) -f CMakeFiles/func.dir/build.make CMakeFiles/func.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles" --progress-num=3,4 "Built target func"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target func"
 .PHONY : CMakeFiles/func.dir/all
 
 # Include target in all.
@@ -186,9 +186,9 @@ all: CMakeFiles/func.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/func.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles" 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/func.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/func.dir/rule
 
 # Convenience name for target.

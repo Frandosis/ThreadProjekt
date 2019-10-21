@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/dynamicarray.c" "/mnt/c/Users/Nikolaj Landberg/CLionProjects/ThreadProjekt/cmake-build-debug/CMakeFiles/da.dir/dynamicarray.c.o"
+  "/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/dynamicarray.c" "/mnt/c/Users/s184805/CLionProjects/OperativSystemer/ThreadProjekt/cmake-build-debug/CMakeFiles/da.dir/dynamicarray.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

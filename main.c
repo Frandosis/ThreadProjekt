@@ -106,11 +106,14 @@ void * primeRd(void * t){
 
     srand((unsigned int) time(&t1));
 
+    //using linear search to add a bit more processing time. Can be changed to binary search.
     retval = 0;
     for(int i = 0; i < 1000; i++){
         int random = rand() % PRIMEMAX;
-        if(bisearch(primes, random, psize) >= 0){
-            retval++;
+        for (int j = 0; j < psize; j++){
+            if (random == primes[j]){
+                retval++;
+            }
         }
     }
 
