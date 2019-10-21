@@ -206,10 +206,6 @@ void * towerOfHanoiWr(void * t){
     Array ins;
     long retval = 0;
     int n = TOH_DISK;
-    char * filename = (char *) calloc(strsize, sizeof(char));
-
-    filename = getcwd(filename, strsize);
-    strcat(filename, "\\file.txt");
 
     initArray(&ins, 2, strsize);
 
@@ -220,7 +216,7 @@ void * towerOfHanoiWr(void * t){
     }
     sem_wait(&filelock);
 
-    if((fptr = fopen(filename, "w")) == NULL) {
+    if((fptr = fopen(".\\toh.txt", "w")) == NULL) {
         puts("File couldn't be opened");
         retval = 0;
         pthread_exit((void*)retval);
@@ -235,7 +231,6 @@ void * towerOfHanoiWr(void * t){
     sem_post(&filelock);
 
     freeArray(&ins);
-    free(filename);
 
     retval = 1;
     pthread_exit((void *) retval);
@@ -252,7 +247,7 @@ void * towerOfHanoiRd(void * t){
     sem_wait(&tohlock);
     sem_wait(&filelock);
 
-    if((fptr = fopen(".\\file.txt", "r")) == NULL) {
+    if((fptr = fopen(".\\toh.txt", "r")) == NULL) {
         puts("File couldn't be opened");
         retval = 0;
         pthread_exit((void*) retval);
