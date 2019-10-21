@@ -6,6 +6,7 @@
 
 #include "dynamicarray.h"
 
+int bisearch(int * arr, int element, int max);
 int tOHPlayer (Array * ins, int n);
 void towerOfHanoi (Array* a, int n, char from_rod, char to_rod, char aux_rod);
 int fibonacci(Array *a,int prNo, int num, int max);

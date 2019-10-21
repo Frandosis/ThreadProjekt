@@ -6,6 +6,36 @@
 #include "stackandqueue.h"
 
 
+int bisearch(int * arr, int element, int max){
+    int lowerBound = 0;
+    int upperBound = max -1;
+    int midPoint = -1;
+    int index = -1;
+
+    while(lowerBound <= upperBound) {
+
+        midPoint = lowerBound + (upperBound - lowerBound) / 2;
+
+        if(arr[midPoint] == element){
+            index = midPoint;
+            break;
+        } else {
+            // if data is larger
+            if(arr[midPoint] < element) {
+                // data is in upper half
+                lowerBound = midPoint + 1;
+            }
+                // data is smaller
+            else {
+                // data is in lower half
+                upperBound = midPoint -1;
+            }
+        }
+    }
+    return index;
+
+}
+
 int tOHPlayer (Array * ins, int n){
     // Initialize the game;
     Stack A, B, C;

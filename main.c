@@ -8,15 +8,17 @@
 #include <string.h>
 
 #define TOH_DISK 10
+#define PRIMEMAX 10000000
 
 FILE * fptr;
 sem_t filelock;
-int primelock;
+sem_t primelock;
 sem_t fibonaccilock;
 sem_t tohlock;
 
 
 void * primeWr(void * t){
+    sem_wait(&primelock);
     printf("Starting thread %ld\n", (long) t);
     long retval = 0;
     char * str;
@@ -24,32 +26,29 @@ void * primeWr(void * t){
     initArray(&numbers, 2, 15);
 
     //generate primenumbers from 0 to the maximum number in the rand() function.
-    for (int i = 0; i < RAND_MAX; i++){
+    //Time for the following process about 22 sec. on Ryzen 5 cpu.
+    for (long i = 0; i < PRIMEMAX; i++){
         if(isPrimeRt(i) == 1) {
             str = (char *) calloc(numbers.strsize, sizeof(char));
             sprintf(str, "%d", i);
             addString(&numbers, str);
         }
     }
-    /*
-    while(fibonaccilock == 1 || tohlock == 1){
 
-    }*/
     sem_wait(&filelock);
 
     if((fptr = fopen("prime.txt", "w")) == NULL) {
         puts("File couldn't be opened");
-        retval = 0;
+        retval = -1;
         pthread_exit((void*)retval);
     }
 
-    for (long i = 0; i < numbers.used; i++){
+    for (size_t i = 0; i < numbers.used; i++){
         fprintf(fptr, "%s\n", numbers.array[i]);
     }
 
-
-    primelock = 1;
     fclose(fptr);
+    sem_post(&primelock);
     sem_post(&filelock);
     freeArray(&numbers);
 
@@ -61,18 +60,17 @@ void * primeRd(void * t){
     printf("Starting thread %ld\n", (long) t);
     time_t t1;
     long retval = 0;
+    long psize;
     Array numbers;
     initArray(&numbers, 2, 15);
     char * str;
 
-    while (primelock != 1){
-
-    }
+    sem_wait(&primelock);
     sem_wait(&filelock);
 
     if((fptr = fopen("prime.txt", "r")) == NULL) {
         puts("File couldn't be opened");
-        retval = 0;
+        retval = -1;
         pthread_exit((void*) retval);
 
     }
@@ -84,26 +82,24 @@ void * primeRd(void * t){
 
 
     fclose(fptr);
-    primelock = 0;
+    sem_post(&primelock);
     sem_post(&filelock);
 
-    long * primes = (long *) calloc(numbers.used, sizeof(long));
+    int * primes = (int *) calloc(numbers.used, sizeof(int));
     for(size_t i = 0; i < numbers.used; i++){
         char * tmp;
         primes[i] = strtol(numbers.array[i], &tmp, 10);
     }
-    long psize = numbers.used;
+    psize = numbers.used;
     freeArray(&numbers);
 
     srand((unsigned int) time(&t1));
 
     retval = 0;
-    for(int i = 0; i < 100; i++){
-        int random = rand();
-        for(long j = 0; j < psize; j++){
-            if (random == primes[j]){
-                retval++;
-            }
+    for(int i = 0; i < 1000; i++){
+        int random = rand() % PRIMEMAX;
+        if(bisearch(primes, random, psize) >= 0){
+            retval++;
         }
     }
 
@@ -122,14 +118,12 @@ void * fibonacciWr(void * t){
 
     fibonacci(&numbers, 0, 1, n);
 
-    /*while(primelock == 1 || tohlock == 1){
 
-    }*/
     sem_wait(&filelock);
 
     if((fptr = fopen("fibonnaci.txt", "w")) == NULL) {
         puts("File couldn't be opened");
-        retval = 0;
+        retval = -1;
         pthread_exit((void*)retval);
     }
 
@@ -162,7 +156,7 @@ void * fibonacciRd(void * t){
 
     if((fptr = fopen("fibonnaci.txt", "r")) == NULL) {
         puts("File couldn't be opened");
-        retval = 0;
+        retval = -1;
         pthread_exit((void*) retval);
 
     }
@@ -185,16 +179,13 @@ void * fibonacciRd(void * t){
 
     fnsize = numbers.used;
     freeArray(&numbers);
-    printf("Working on the randomizer\n");
     srand((unsigned int) time(&time1));
 
     retval = 0;
     for(int i = 0; i < 1000000; i++){
         int random = rand();
-        for(long j = 0; j < fnsize; j++){
-            if (random == fibnum[j]){
-                retval++;
-            }
+        if(bisearch(fibnum, random, fnsize) >= 0){
+            retval++;
         }
     }
     free(fibnum);
@@ -221,10 +212,10 @@ void * towerOfHanoiWr(void * t){
 
     if((fptr = fopen("toh.txt", "w")) == NULL) {
         puts("File couldn't be opened");
-        retval = 0;
+        retval = -1;
         pthread_exit((void*)retval);
     }
-    puts("Writing to the file\n");
+
     for (size_t i = 0; i < ins.used; i++){
         fprintf(fptr, "%s\n", ins.array[i]);
     }
@@ -252,7 +243,7 @@ void * towerOfHanoiRd(void * t){
 
     if((fptr = fopen("toh.txt", "r")) == NULL) {
         puts("File couldn't be opened");
-        retval = 0;
+        retval = -1;
         pthread_exit((void*) retval);
 
     }
@@ -273,8 +264,8 @@ void * towerOfHanoiRd(void * t){
 }
 
 int main() {
-    int num_t = 2;
-    void * (*fun_ptr_arr[])(void *) = {fibonacciWr, fibonacciRd};
+    int num_t = 6;
+    void * (*fun_ptr_arr[])(void *) = {primeWr, primeRd, fibonacciWr, fibonacciRd, towerOfHanoiWr, towerOfHanoiRd};
     void * retval [num_t];
 
     pthread_attr_t attr;
@@ -282,9 +273,10 @@ int main() {
     long taskids [num_t];
     int rc, t;
 
-    sem_init(&filelock, NULL, 1);
-    sem_init(&tohlock, NULL, 1);
-    sem_init(&fibonaccilock, NULL, 1);
+    sem_init(&filelock, 0, 3);
+    sem_init(&tohlock, 0, 1);
+    sem_init(&fibonaccilock, 0, 1);
+    sem_init(&primelock, 0, 1);
 
     //Create the joinable attributes for the threads.
     pthread_attr_init(&attr);
@@ -299,7 +291,7 @@ int main() {
             exit(-1);
         }
     }
-
+    clock_t begin = clock();
     //Free attribute and wait for the other threads
     pthread_attr_destroy(&attr);
 
@@ -312,9 +304,15 @@ int main() {
         printf("Value returned from thread %d: %ld\n", t, (long) retval[t]);
     }
 
+    clock_t end = clock();
+    double time_spent = (double) (end - begin) / CLOCKS_PER_SEC;
+
+    printf("Time it took for threads to finish and join: %lf sec.", time_spent);
+
     sem_destroy(&filelock);
     sem_destroy(&tohlock);
     sem_destroy(&fibonaccilock);
+    sem_destroy(&primelock);
 
     pthread_exit(NULL);
 
