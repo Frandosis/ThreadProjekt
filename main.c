@@ -7,7 +7,7 @@
 #include "dynamicarray.h"
 #include <string.h>
 
-#define TOH_DISK 10
+#define TOH_DISK 20
 #define PRIMEMAX 10000000
 
 typedef struct {
@@ -38,7 +38,7 @@ void * primeWr(void * t){
     for (long i = 0; i < PRIMEMAX; i++){
         if(isPrimeRt(i) == 1) {
             str = (char *) calloc(numbers.strsize, sizeof(char));
-            sprintf(str, "%d", i);
+            sprintf(str, "%ld", i);
             addString(&numbers, str);
         }
     }
@@ -51,7 +51,7 @@ void * primeWr(void * t){
         pthread_exit((void*)retval);
     }
 
-    for (size_t i = 0; i < numbers.used; i++){
+    for (unsigned long int i = 0; i < numbers.used; i++){
         fprintf(fptr, "%s\n", numbers.array[i]);
     }
 
@@ -97,7 +97,7 @@ void * primeRd(void * t){
     sem_post(&filelock);
 
     int * primes = (int *) calloc(numbers.used, sizeof(int));
-    for(size_t i = 0; i < numbers.used; i++){
+    for(unsigned long int i = 0; i < numbers.used; i++){
         char * tmp;
         primes[i] = strtol(numbers.array[i], &tmp, 10);
     }
@@ -141,7 +141,7 @@ void * fibonacciWr(void * t){
         pthread_exit((void*)retval);
     }
 
-    for (size_t i = 0; i < numbers.used; i++){
+    for (unsigned long int i = 0; i < numbers.used; i++){
         fprintf(fptr, "%s\n", numbers.array[i]);
     }
 
@@ -163,7 +163,7 @@ void * fibonacciRd(void * t){
     long fnsize;
     time_t time1;
     Array numbers;
-    long * fibnum;
+    int * fibnum;
     char * str;
 
     initArray(&numbers, 2, 15);
@@ -188,8 +188,8 @@ void * fibonacciRd(void * t){
     sem_post(&fibonaccilock);
     sem_post(&filelock);
 
-    fibnum = (long *) calloc(numbers.used, sizeof(long));
-    for(long i = 0; i < numbers.used; i++){
+    fibnum = (int *) calloc(numbers.used, sizeof(long));
+    for(int i = 0; i < numbers.used; i++){
         char * tmp;
         fibnum[i] = strtol(numbers.array[i], &tmp, 10);
     }
@@ -216,7 +216,7 @@ void * towerOfHanoiWr(void * t){
     Thread_data * data = (Thread_data *) t;
     printf("Starting thread %ld\n", data->taskid);
     data->start = clock();
-    size_t strsize = 100;
+    unsigned long int strsize = 100;
     Array ins;
     long retval = 0;
     int n = TOH_DISK;
@@ -236,7 +236,7 @@ void * towerOfHanoiWr(void * t){
         pthread_exit((void*)retval);
     }
 
-    for (size_t i = 0; i < ins.used; i++){
+    for (unsigned long int i = 0; i < ins.used; i++){
         fprintf(fptr, "%s\n", ins.array[i]);
     }
 

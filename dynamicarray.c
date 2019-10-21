@@ -6,7 +6,7 @@
 #include "dynamicarray.h"
 
 
-void initArray(Array *a, size_t initialSize, size_t stringsize) {
+void initArray(Array *a, unsigned long int initialSize, unsigned long int stringsize) {
     char * e = "test";
     a->array = (char **)calloc(initialSize, sizeof(&e));
     a->used = 0;
@@ -25,7 +25,7 @@ void addString(Array *a, char *element) {
 }
 int contains(Array* a, char * element)
 {
-    for (size_t i = 0; i < a->used; i++){
+    for (unsigned long int i = 0; i < a->used; i++){
          if(strcmp(element, a->array[i]) == 0){
             return 1;
          }
@@ -34,7 +34,7 @@ int contains(Array* a, char * element)
 }
 void freeArray(Array *a) {
     //first free every string in the array.
-    for (size_t i = 0; i < a->size; i++){
+    for (unsigned long int i = 0; i < a->size; i++){
         char * str = *(a->array+i);
         free(str);
     }

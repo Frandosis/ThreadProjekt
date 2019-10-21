@@ -49,7 +49,7 @@ int tOHPlayer (Array * ins, int n){
     }
 
     // Run the instructions
-    for (size_t i = 0; i < ins->used; i++){
+    for (unsigned long int i = 0; i < ins->used; i++){
         char * str = ins->array[i];
         char * ptr;
         int x = strtol(str+10, &ptr, 10);
@@ -141,7 +141,7 @@ int fibonacci(Array *a,long prNo, long num, long max)
     char * str;
     if(prNo == 0){
         str = (char *) calloc(a->strsize, sizeof(&c));
-        sprintf(str,"%d", prNo);
+        sprintf(str,"%ld", prNo);
         addString(a, str);
     }
 
@@ -150,7 +150,7 @@ int fibonacci(Array *a,long prNo, long num, long max)
     } else {
         nxtNo = prNo + num;
         str = (char *) calloc(a->strsize, sizeof(&c));
-        sprintf(str,"%d", num);
+        sprintf(str,"%ld", num);
         addString(a, str);
         return fibonacci(a, num, nxtNo, max) + 1;
     }
