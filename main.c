@@ -10,6 +10,12 @@
 #define TOH_DISK 10
 #define PRIMEMAX 10000000
 
+typedef struct {
+    long taskid;
+    clock_t start;
+    clock_t end;
+} Thread_data;
+
 FILE * fptr;
 sem_t filelock;
 sem_t primelock;
@@ -19,7 +25,9 @@ sem_t tohlock;
 
 void * primeWr(void * t){
     sem_wait(&primelock);
-    printf("Starting thread %ld\n", (long) t);
+    Thread_data * data = (Thread_data *) t;
+    printf("Starting thread %ld\n", data->taskid);
+    data->start = clock();
     long retval = 0;
     char * str;
     Array numbers;
@@ -53,11 +61,14 @@ void * primeWr(void * t){
     freeArray(&numbers);
 
     retval = 1;
+    data->end = clock();
     pthread_exit((void *) retval);
 }
 
 void * primeRd(void * t){
-    printf("Starting thread %ld\n", (long) t);
+    Thread_data * data = (Thread_data *) t;
+    printf("Starting thread %ld\n", data->taskid);
+    data->start = clock();
     time_t t1;
     long retval = 0;
     long psize;
@@ -104,12 +115,15 @@ void * primeRd(void * t){
     }
 
     free(primes);
+    data->end = clock();
     pthread_exit((void *) retval);
 }
 
 void * fibonacciWr(void * t){
     sem_wait(&fibonaccilock);
-    printf("Starting thread %ld\n", (long) t);
+    Thread_data * data = (Thread_data *) t;
+    printf("Starting thread %ld\n", data->taskid);
+    data->start = clock();
     long retval = 0;
     long n = RAND_MAX;
 
@@ -136,12 +150,15 @@ void * fibonacciWr(void * t){
     sem_post(&filelock);
     freeArray(&numbers);
 
+    data->end = clock();
     retval = 1;
     pthread_exit((void *)retval);
 }
 
 void * fibonacciRd(void * t){
-    printf("Starting thread %ld\n", (long) t);
+    Thread_data * data = (Thread_data *) t;
+    printf("Starting thread %ld\n", data->taskid);
+    data->start = clock();
     long retval = 0;
     long fnsize;
     time_t time1;
@@ -189,13 +206,16 @@ void * fibonacciRd(void * t){
         }
     }
     free(fibnum);
+    data->end = clock();
     pthread_exit((void *) retval);
 
 }
 
 void * towerOfHanoiWr(void * t){
     sem_wait(&tohlock);
-    printf("Starting thread %ld\n", (long) t);
+    Thread_data * data = (Thread_data *) t;
+    printf("Starting thread %ld\n", data->taskid);
+    data->start = clock();
     size_t strsize = 100;
     Array ins;
     long retval = 0;
@@ -226,12 +246,15 @@ void * towerOfHanoiWr(void * t){
 
     freeArray(&ins);
 
+    data->end = clock();
     retval = 1;
     pthread_exit((void *) retval);
 }
 
 void * towerOfHanoiRd(void * t){
-    printf("Starting thread %ld\n", (long) t);
+    Thread_data * data = (Thread_data *) t;
+    printf("Starting thread %ld\n", data->taskid);
+    data->start = clock();
     long retval = 0;
     int n = TOH_DISK;
     char * str;
@@ -260,6 +283,7 @@ void * towerOfHanoiRd(void * t){
     sem_post(&filelock);
     retval = tOHPlayer(&ins, n);
     freeArray(&ins);
+    data->end = clock();
     pthread_exit((void *) retval);
 }
 
@@ -267,10 +291,12 @@ int main() {
     int num_t = 6;
     void * (*fun_ptr_arr[])(void *) = {primeWr, primeRd, fibonacciWr, fibonacciRd, towerOfHanoiWr, towerOfHanoiRd};
     void * retval [num_t];
+    double time_spent [num_t];
+    double seq_total = 0;
+    Thread_data data [num_t];
 
     pthread_attr_t attr;
     pthread_t threads [num_t];
-    long taskids [num_t];
     int rc, t;
 
     sem_init(&filelock, 0, 3);
@@ -284,8 +310,8 @@ int main() {
 
     //Create the threads
     for(t = 0; t < num_t; t++) {
-        taskids[t] = t;
-        rc = pthread_create(&threads[t], &attr, fun_ptr_arr[t], (void *) taskids[t]);
+        data[t].taskid = t;
+        rc = pthread_create(&threads[t], &attr, fun_ptr_arr[t], (void *) &data[t]);
         if (rc) {
             printf("ERROR; return code from pthread_create() is %d\n", rc);
             exit(-1);
@@ -305,10 +331,25 @@ int main() {
     }
 
     clock_t end = clock();
-    double time_spent = (double) (end - begin) / CLOCKS_PER_SEC;
 
-    printf("Time it took for threads to finish and join: %lf sec.", time_spent);
+    double main_time = (double) (end - begin)/CLOCKS_PER_SEC;
+    for (int i = 0; i < num_t; i++){
+        if(i % 2 == 1){
+            time_spent[i] = ((double) (data[i].end - data[i].start) / CLOCKS_PER_SEC) - time_spent[i-1];
+        } else {
+            time_spent[i] = (double) (data[i].end - data[i].start) / CLOCKS_PER_SEC;
+        }
+        seq_total += time_spent[i];
+        printf("Thread %d process time was %lf\n", i, time_spent[i]);
+    }
+    /*
+     * For fair comparison between the total time without multithreading,
+     * i have subtracted the writing time from the reader threads,
+     * since they have to wait for writers to be done.*/
 
+    printf("\nTime it took for all threads to join: %lf\n", main_time);
+    printf("\nTime it would have taken without multithreading: %lf\n", seq_total);
+    
     sem_destroy(&filelock);
     sem_destroy(&tohlock);
     sem_destroy(&fibonaccilock);
