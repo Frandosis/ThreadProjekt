@@ -12,7 +12,7 @@
 FILE * fptr;
 sem_t filelock;
 int primelock;
-int fibonaccilock;
+sem_t fibonaccilock;
 sem_t tohlock;
 
 
@@ -37,7 +37,7 @@ void * primeWr(void * t){
     }*/
     sem_wait(&filelock);
 
-    if((fptr = fopen("file.txt", "w")) == NULL) {
+    if((fptr = fopen("prime.txt", "w")) == NULL) {
         puts("File couldn't be opened");
         retval = 0;
         pthread_exit((void*)retval);
@@ -70,7 +70,7 @@ void * primeRd(void * t){
     }
     sem_wait(&filelock);
 
-    if((fptr = fopen("file.txt", "r")) == NULL) {
+    if((fptr = fopen("prime.txt", "r")) == NULL) {
         puts("File couldn't be opened");
         retval = 0;
         pthread_exit((void*) retval);
@@ -112,6 +112,7 @@ void * primeRd(void * t){
 }
 
 void * fibonacciWr(void * t){
+    sem_wait(&fibonaccilock);
     printf("Starting thread %ld\n", (long) t);
     long retval = 0;
     long n = RAND_MAX;
@@ -126,7 +127,7 @@ void * fibonacciWr(void * t){
     }*/
     sem_wait(&filelock);
 
-    if((fptr = fopen("file.txt", "w")) == NULL) {
+    if((fptr = fopen("fibonnaci.txt", "w")) == NULL) {
         puts("File couldn't be opened");
         retval = 0;
         pthread_exit((void*)retval);
@@ -137,9 +138,10 @@ void * fibonacciWr(void * t){
     }
 
     fclose(fptr);
-    fibonaccilock = 1;
+    sem_post(&fibonaccilock);
     sem_post(&filelock);
     freeArray(&numbers);
+
     retval = 1;
     pthread_exit((void *)retval);
 }
@@ -147,17 +149,18 @@ void * fibonacciWr(void * t){
 void * fibonacciRd(void * t){
     printf("Starting thread %ld\n", (long) t);
     long retval = 0;
+    long fnsize;
     time_t time1;
     Array numbers;
     long * fibnum;
     char * str;
 
-    while(fibonaccilock != 1){
+    initArray(&numbers, 2, 15);
 
-    }
+    sem_wait(&fibonaccilock);
     sem_wait(&filelock);
 
-    if((fptr = fopen("/file.txt", "r")) == NULL) {
+    if((fptr = fopen("fibonnaci.txt", "r")) == NULL) {
         puts("File couldn't be opened");
         retval = 0;
         pthread_exit((void*) retval);
@@ -171,7 +174,7 @@ void * fibonacciRd(void * t){
     }
 
     fclose(fptr);
-    fibonaccilock = 0;
+    sem_post(&fibonaccilock);
     sem_post(&filelock);
 
     fibnum = (long *) calloc(numbers.used, sizeof(long));
@@ -180,13 +183,13 @@ void * fibonacciRd(void * t){
         fibnum[i] = strtol(numbers.array[i], &tmp, 10);
     }
 
-    long fnsize = numbers.used;
+    fnsize = numbers.used;
     freeArray(&numbers);
-
+    printf("Working on the randomizer\n");
     srand((unsigned int) time(&time1));
 
     retval = 0;
-    for(int i = 0; i < 100; i++){
+    for(int i = 0; i < 1000000; i++){
         int random = rand();
         for(long j = 0; j < fnsize; j++){
             if (random == fibnum[j]){
@@ -211,12 +214,12 @@ void * towerOfHanoiWr(void * t){
 
     towerOfHanoi(&ins, n, 'A', 'C', 'B');
 
-    while(primelock == 1 || fibonaccilock == 1){
+    /*while(primelock == 1 || fibonaccilock == 1){
 
-    }
+    }*/
     sem_wait(&filelock);
 
-    if((fptr = fopen(".\\toh.txt", "w")) == NULL) {
+    if((fptr = fopen("toh.txt", "w")) == NULL) {
         puts("File couldn't be opened");
         retval = 0;
         pthread_exit((void*)retval);
@@ -247,7 +250,7 @@ void * towerOfHanoiRd(void * t){
     sem_wait(&tohlock);
     sem_wait(&filelock);
 
-    if((fptr = fopen(".\\toh.txt", "r")) == NULL) {
+    if((fptr = fopen("toh.txt", "r")) == NULL) {
         puts("File couldn't be opened");
         retval = 0;
         pthread_exit((void*) retval);
@@ -271,7 +274,7 @@ void * towerOfHanoiRd(void * t){
 
 int main() {
     int num_t = 2;
-    void * (*fun_ptr_arr[])(void *) = {towerOfHanoiWr, towerOfHanoiRd};
+    void * (*fun_ptr_arr[])(void *) = {fibonacciWr, fibonacciRd};
     void * retval [num_t];
 
     pthread_attr_t attr;
@@ -281,6 +284,7 @@ int main() {
 
     sem_init(&filelock, NULL, 1);
     sem_init(&tohlock, NULL, 1);
+    sem_init(&fibonaccilock, NULL, 1);
 
     //Create the joinable attributes for the threads.
     pthread_attr_init(&attr);
@@ -309,6 +313,8 @@ int main() {
     }
 
     sem_destroy(&filelock);
+    sem_destroy(&tohlock);
+    sem_destroy(&fibonaccilock);
 
     pthread_exit(NULL);
 

@@ -104,20 +104,25 @@ void towerOfHanoi (Array* a, int n, char from_rod, char to_rod, char aux_rod){
     towerOfHanoi(a, n-1, aux_rod, to_rod, from_rod);
 }
 
-int fibonacci(Array *a,int prNo, int num, int max)
+int fibonacci(Array *a,long prNo, long num, long max)
 {
-    int nxtNo;
+    long nxtNo;
     char c = ' ';
     char * str;
+    if(prNo == 0){
+        str = (char *) calloc(a->strsize, sizeof(&c));
+        sprintf(str,"%d", prNo);
+        addString(a, str);
+    }
 
     if (num > max){
         return 0;
     } else {
-       nxtNo = prNo + num;
-       str = (char *) malloc(a->strsize*sizeof(&c));
-       sprintf(str,"%d", num);
-       addString(a, str);
-       return fibonacci(a, num, nxtNo, max) + 1;
+        nxtNo = prNo + num;
+        str = (char *) calloc(a->strsize, sizeof(&c));
+        sprintf(str,"%d", num);
+        addString(a, str);
+        return fibonacci(a, num, nxtNo, max) + 1;
     }
 }
 
